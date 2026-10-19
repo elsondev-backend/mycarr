@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WelWel Cars | Automóveis do WelWel</title>
+    <meta name="description" content="Vitrine de carros esportivos e elétricos da WelWel Cars, com ficha técnica completa de cada modelo.">
+    <meta name="theme-color" content="#6d00d9">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./estyle.css">
+</head>
+
+<body class="page-home">
+    <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="WelWel Cars, página inicial">
+            <img src="./img/logo.webp" alt="WelWel Cars" width="480" height="234">
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="menu" class="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="./index.html" aria-current="page">Home</a></li>
+                <li><a href="./carros.html">Carros</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" aria-roledescription="carrossel" aria-label="Carros em destaque">
+
+            <div class="list">
+            <article class="item active" aria-roledescription="slide" aria-label="1 de 5">
+                <div class="car-img">
+                    <img src="./img/car1.webp" alt="Porsche 911 Turbo S, vista lateral" fetchpriority="high">
+                </div>
+
+                <div class="content">
+                    <p class="car-information">Único Dono</p>
+                    <h2>Porsche 911 Turbo S <small>Tipo 992</small></h2>
+                    <p class="description">Linhas fluidas da família 911, caixas de roda traseiras alargadas e freios de cerâmica com pinças amarelas.</p>
+                    <ul class="stats">
+                        <li><b>650 cv</b><span>potência</span></li>
+                        <li><b>2,7 s</b><span>0 a 100 km/h</span></li>
+                        <li><b>330 km/h</b><span>velocidade máx.</span></li>
+                    </ul>
+                    <button class="information" type="button" data-ficha="ficha-1">Saiba Mais</button>
+                </div>
+            </article>
+            <article class="item" aria-roledescription="slide" aria-label="2 de 5" aria-hidden="true">
+                <div class="car-img">
+                    <img src="./img/car2.webp" alt="Ferrari California T, vista lateral" loading="lazy">
+                </div>
+
+                <div class="content">
+                    <p class="car-information">Único Dono</p>
+                    <h2>Ferrari California T <small>Grand Tourer conversível</small></h2>
+                    <p class="description">Clássico GT de motor dianteiro-central, conversível 2+2 com pintura Rosso Corsa.</p>
+                    <ul class="stats">
+                        <li><b>560 cv</b><span>potência</span></li>
+                        <li><b>3,6 s</b><span>0 a 100 km/h</span></li>
+                        <li><b>316 km/h</b><span>velocidade máx.</span></li>
+                    </ul>
+                    <button class="information" type="button" data-ficha="ficha-2">Saiba Mais</button>
+                </div>
+            </article>
+            <article class="item" aria-roledescription="slide" aria-label="3 de 5" aria-hidden="true">
+                <div class="car-img">
+                    <img src="./img/car3.webp" alt="Lamborghini Aventador S, vista lateral" loading="lazy">
+                </div>
+
+                <div class="content">
+                    <p class="car-information">Único Dono</p>
+                    <h2>Lamborghini Aventador S <small>LP 740-4</small></h2>
+                    <p class="description">Silhueta em cunha, V12 aspirado e as icônicas portas em tesoura de Sant&#x27;Agata Bolognese.</p>
+                    <ul class="stats">
+                        <li><b>740 cv</b><span>potência</span></li>
+                        <li><b>2,9 s</b><span>0 a 100 km/h</span></li>
+                        <li><b>350 km/h</b><span>velocidade máx.</span></li>
+                    </ul>
+                    <button class="information" type="button" data-ficha="ficha-3">Saiba Mais</button>
+                </div>
+            </article>
+            <article class="item" aria-roledescription="slide" aria-label="4 de 5" aria-hidden="true">
+                <div class="car-img">
+                    <img src="./img/car4.webp" alt="Geely EX2, vista lateral" loading="lazy">
+                </div>
+
+                <div class="content">
+                    <p class="car-information">Único Dono</p>
+                    <h2>Geely EX2 <small>Elétrico compacto</small></h2>
+                    <p class="description">Elétrico de proporções de monovolume, pintura bicolor e design pensado para reduzir o arrasto.</p>
+                    <ul class="stats">
+                        <li><b>116 cv</b><span>potência</span></li>
+                        <li><b>289 km</b><span>autonomia</span></li>
+                        <li><b>21 min</b><span>recarga 30-80%</span></li>
+                    </ul>
+                    <button class="information" type="button" data-ficha="ficha-4">Saiba Mais</button>
+                </div>
+            </article>
+            <article class="item" aria-roledescription="slide" aria-label="5 de 5" aria-hidden="true">
+                <div class="car-img">
+                    <img src="./img/car5.webp" alt="BMW iX3 M Sport, vista lateral" loading="lazy">
+                </div>
+
+                <div class="content">
+                    <p class="car-information">Único Dono</p>
+                    <h2>BMW iX3 M Sport <small>Geração G01 LCI</small></h2>
+                    <p class="description">SUV elétrico que preserva as linhas do X3, com pacote aerodinâmico M Sport.</p>
+                    <ul class="stats">
+                        <li><b>286 cv</b><span>potência</span></li>
+                        <li><b>460 km</b><span>autonomia</span></li>
+                        <li><b>6,8 s</b><span>0 a 100 km/h</span></li>
+                    </ul>
+                    <button class="information" type="button" data-ficha="ficha-5">Saiba Mais</button>
+                </div>
+            </article>
+            </div>
+
+            <div class="arrows">
+                <button id="prev" type="button" aria-label="Carro anterior"><img src="./img/arrow.svg" alt=""></button>
+                <button id="next" type="button" aria-label="Próximo carro"><img src="./img/arrow.svg" alt=""></button>
+            </div>
+
+            <div class="indicator">
+                <div class="number" aria-live="polite">01</div>
+                <ul>
+                <li><button class="line active" type="button" aria-label="Ir para o carro 1"></button></li>
+                <li><button class="line" type="button" aria-label="Ir para o carro 2"></button></li>
+                <li><button class="line" type="button" aria-label="Ir para o carro 3"></button></li>
+                <li><button class="line" type="button" aria-label="Ir para o carro 4"></button></li>
+                <li><button class="line" type="button" aria-label="Ir para o carro 5"></button></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="ficha" id="ficha-1" aria-labelledby="ficha-1-titulo">
+        <form method="dialog">
+            <button class="close" aria-label="Fechar">×</button>
+        </form>
+        <p class="car-information">Ficha técnica</p>
+        <h2 id="ficha-1-titulo">Porsche 911 Turbo S <small>Tipo 992</small></h2>
+        <img src="./img/car1.webp" alt="" loading="lazy">
+        <h3>Análise visual</h3>
+        <ul class="highlights">
+            <li><strong>Silhueta de perfil:</strong> Linhas fluidas e aerodinâmicas tradicionais do 911, com as caixas de roda traseiras visivelmente alargadas.</li>
+            <li><strong>Entradas de ar laterais:</strong> Grandes aberturas nos para-lamas traseiros, que alimentam e refrigeram o motor biturbo.</li>
+            <li><strong>Rodas e freios:</strong> Rodas com cubo rápido (central lock) e pinças amarelas do sistema de freios de cerâmica PCCB.</li>
+            <li><strong>Defletor traseiro:</strong> Aerofólio integrado para controle adaptativo da força descendente (downforce).</li>
+        </ul>
+        <h3>Especificações</h3>
+        <dl class="specs">
+            <div><dt>Motor</dt><dd>3.8 litros, 6 cilindros opostos (Boxer), biturbo</dd></div>
+            <div><dt>Combustível</dt><dd>Gasolina</dd></div>
+            <div><dt>Potência máxima</dt><dd>650 cv a 6.750 rpm</dd></div>
+            <div><dt>Torque máximo</dt><dd>81,6 kgfm a 2.500 rpm</dd></div>
+            <div><dt>Transmissão</dt><dd>Automática de dupla embreagem (PDK), 8 marchas</dd></div>
+            <div><dt>Tração</dt><dd>Integral sob demanda (AWD)</dd></div>
+            <div><dt>0 a 100 km/h</dt><dd>2,7 segundos</dd></div>
+            <div><dt>Velocidade máxima</dt><dd>330 km/h</dd></div>
+            <div><dt>Peso em ordem de marcha</dt><dd>1.640 kg</dd></div>
+            <div><dt>Freios</dt><dd>Discos de cerâmica ventilados e perfurados (PCCB)</dd></div>
+            <div><dt>Pneus dianteiros</dt><dd>255/35 R20</dd></div>
+            <div><dt>Pneus traseiros</dt><dd>315/30 R21</dd></div>
+        </dl>
+    </dialog>
+    <dialog class="ficha" id="ficha-2" aria-labelledby="ficha-2-titulo">
+        <form method="dialog">
+            <button class="close" aria-label="Fechar">×</button>
+        </form>
+        <p class="car-information">Ficha técnica</p>
+        <h2 id="ficha-2-titulo">Ferrari California T <small>Grand Tourer conversível</small></h2>
+        <img src="./img/car2.webp" alt="" loading="lazy">
+        <h3>Análise visual</h3>
+        <ul class="highlights">
+            <li><strong>Design de perfil:</strong> Silhueta clássica de Grand Tourer, motor dianteiro-central e tração traseira, com o escudo da escuderia nos para-lamas dianteiros.</li>
+            <li><strong>Configuração conversível:</strong> Capota aberta, revelando o interior no formato de assentos 2+2.</li>
+            <li><strong>Flanco esculpido:</strong> Um vinco fluido que começa atrás da roda dianteira e segue até a maçaneta da porta.</li>
+            <li><strong>Rodas e freios:</strong> Rodas de liga leve de cinco raios em estrela, com pinças vermelhas que combinam com a pintura Rosso Corsa.</li>
+        </ul>
+        <h3>Especificações</h3>
+        <dl class="specs">
+            <div><dt>Motor</dt><dd>3.9 litros (3.855 cm³), V8 a 90°, biturbo</dd></div>
+            <div><dt>Combustível</dt><dd>Gasolina</dd></div>
+            <div><dt>Potência máxima</dt><dd>560 cv a 7.500 rpm</dd></div>
+            <div><dt>Torque máximo</dt><dd>77 kgfm a 4.750 rpm</dd></div>
+            <div><dt>Transmissão</dt><dd>Automatizada de dupla embreagem (F1-DCT), 7 marchas</dd></div>
+            <div><dt>Tração</dt><dd>Traseira (RWD)</dd></div>
+            <div><dt>0 a 100 km/h</dt><dd>3,6 segundos</dd></div>
+            <div><dt>Velocidade máxima</dt><dd>316 km/h</dd></div>
+            <div><dt>Peso seco</dt><dd>1.625 kg</dd></div>
+            <div><dt>Freios</dt><dd>Discos de carbono-cerâmica ventilados</dd></div>
+            <div><dt>Porta-malas</dt><dd>340 litros (240 litros com a capota recolhida)</dd></div>
+        </dl>
+    </dialog>
+    <dialog class="ficha" id="ficha-3" aria-labelledby="ficha-3-titulo">
+        <form method="dialog">
+            <button class="close" aria-label="Fechar">×</button>
+        </form>
+        <p class="car-information">Ficha técnica</p>
+        <h2 id="ficha-3-titulo">Lamborghini Aventador S <small>LP 740-4</small></h2>
+        <img src="./img/car3.webp" alt="" loading="lazy">
+        <h3>Análise visual</h3>
+        <ul class="highlights">
+            <li><strong>Silhueta em cunha:</strong> Linhas angulares e geométricas, clássicas e futuristas, do DNA de design da Lamborghini.</li>
+            <li><strong>Entradas de ar laterais:</strong> Enormes aberturas nas portas e para-lamas traseiros, que levam ar ao motor V12 e aos freios.</li>
+            <li><strong>Rodas e freios:</strong> Rodas raiadas com acabamento diamantado e pinças de freio amarelas em contraste com a carroceria.</li>
+            <li><strong>Portas em tesoura:</strong> O vinco superior marca o contorno das portas de abertura vertical de Sant&#x27;Agata Bolognese.</li>
+        </ul>
+        <h3>Especificações</h3>
+        <dl class="specs">
+            <div><dt>Motor</dt><dd>6.5 litros, V12 a 60°, aspirado</dd></div>
+            <div><dt>Combustível</dt><dd>Gasolina</dd></div>
+            <div><dt>Potência máxima</dt><dd>740 cv a 8.400 rpm</dd></div>
+            <div><dt>Torque máximo</dt><dd>70,4 kgfm (690 Nm) a 5.500 rpm</dd></div>
+            <div><dt>Transmissão</dt><dd>Automatizada ISR (Independent Shifting Rods), 7 marchas</dd></div>
+            <div><dt>Tração</dt><dd>Integral permanente (AWD)</dd></div>
+            <div><dt>0 a 100 km/h</dt><dd>2,9 segundos</dd></div>
+            <div><dt>Velocidade máxima</dt><dd>350 km/h</dd></div>
+            <div><dt>Peso seco</dt><dd>1.575 kg</dd></div>
+            <div><dt>Chassi</dt><dd>Suspensão ativa magnetorreológica e esterçamento nas 4 rodas</dd></div>
+        </dl>
+    </dialog>
+    <dialog class="ficha" id="ficha-4" aria-labelledby="ficha-4-titulo">
+        <form method="dialog">
+            <button class="close" aria-label="Fechar">×</button>
+        </form>
+        <p class="car-information">Ficha técnica</p>
+        <h2 id="ficha-4-titulo">Geely EX2 <small>Elétrico compacto</small></h2>
+        <img src="./img/car4.webp" alt="" loading="lazy">
+        <h3>Análise visual</h3>
+        <ul class="highlights">
+            <li><strong>Proporções de monovolume:</strong> Teto alto, balanços curtos e frente inclinada, priorizando o espaço interno e a modularidade da cabine.</li>
+            <li><strong>Pintura bicolor:</strong> Carroceria em tom suave, com colunas e teto em preto brilhante.</li>
+            <li><strong>Design aerodinâmico:</strong> Rodas aro 16 de desenho fechado e maçanetas embutidas para reduzir o arrasto.</li>
+            <li><strong>Linha de cintura fluida:</strong> Vincos sutis e transições arredondadas, numa estética limpa e futurista.</li>
+        </ul>
+        <h3>Especificações</h3>
+        <dl class="specs">
+            <div><dt>Motor</dt><dd>Elétrico, síncrono de ímãs permanentes</dd></div>
+            <div><dt>Potência máxima</dt><dd>116 cv (85 kW)</dd></div>
+            <div><dt>Torque máximo</dt><dd>15,3 kgfm (150 Nm)</dd></div>
+            <div><dt>Tração</dt><dd>Traseira (RWD)</dd></div>
+            <div><dt>Bateria</dt><dd>Lítio-ferro-fosfato (LFP)</dd></div>
+            <div><dt>Autonomia (Inmetro)</dt><dd>289 km</dd></div>
+            <div><dt>Tempo de recarga</dt><dd>30% a 80% em 21 minutos (DC rápida)</dd></div>
+            <div><dt>Comprimento / entre-eixos</dt><dd>4,13 m / 2,65 m</dd></div>
+            <div><dt>Porta-malas traseiro</dt><dd>375 litros</dd></div>
+            <div><dt>Porta-malas dianteiro (frunk)</dt><dd>70 litros</dd></div>
+        </dl>
+    </dialog>
+    <dialog class="ficha" id="ficha-5" aria-labelledby="ficha-5-titulo">
+        <form method="dialog">
+            <button class="close" aria-label="Fechar">×</button>
+        </form>
+        <p class="car-information">Ficha técnica</p>
+        <h2 id="ficha-5-titulo">BMW iX3 M Sport <small>Geração G01 LCI</small></h2>
+        <img src="./img/car5.webp" alt="" loading="lazy">
+        <h3>Análise visual</h3>
+        <ul class="highlights">
+            <li><strong>Proporções de SUV:</strong> Silhueta bem definida no estilo SAV, com balanço traseiro que amplia o espaço de carga.</li>
+            <li><strong>Pacote M Sport:</strong> Para-choques esportivos, soleiras laterais musculosas e acabamento Shadow Line nas molduras das janelas.</li>
+            <li><strong>Identidade sutil:</strong> Preserva as linhas do X3, com discretos apliques pretos nas saídas de ar dos para-lamas dianteiros.</li>
+            <li><strong>Rodas exclusivas:</strong> Liga leve aerodinâmica de desenho fechado e acabamento bicolor, para reduzir o arrasto.</li>
+        </ul>
+        <h3>Especificações</h3>
+        <dl class="specs">
+            <div><dt>Motorização</dt><dd>1 motor elétrico traseiro (BMW eDrive de 5ª geração)</dd></div>
+            <div><dt>Potência máxima</dt><dd>286 cv (210 kW)</dd></div>
+            <div><dt>Torque máximo</dt><dd>40,8 kgfm (400 Nm)</dd></div>
+            <div><dt>Transmissão</dt><dd>Automática de 1 marcha</dd></div>
+            <div><dt>Tração</dt><dd>Traseira (RWD)</dd></div>
+            <div><dt>0 a 100 km/h</dt><dd>6,8 segundos</dd></div>
+            <div><dt>Velocidade máxima</dt><dd>180 km/h (limitada eletronicamente)</dd></div>
+            <div><dt>Bateria</dt><dd>80 kWh brutos (74 kWh úteis)</dd></div>
+            <div><dt>Autonomia média</dt><dd>Até 460 km (ciclo WLTP)</dd></div>
+            <div><dt>Recarga rápida</dt><dd>10% a 80% em cerca de 32 minutos (DC de 150 kW)</dd></div>
+            <div><dt>Porta-malas</dt><dd>510 litros</dd></div>
+        </dl>
+    </dialog>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

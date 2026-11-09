@@ -1,291 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WelWel Cars | Automóveis do WelWel</title>
-    <meta name="description" content="Vitrine de carros esportivos e elétricos da WelWel Cars, com ficha técnica completa de cada modelo.">
-    <meta name="theme-color" content="#6d00d9">
-    <link rel="icon" type="image/png" href="./img/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./estyle.css">
-</head>
+    <title>Elson Rocha | Desenvolvedor Backend</title>
+    <meta name="description" content="Portfólio de Elson Rocha, desenvolvedor backend com Java, Spring Boot, Node.js, Python e SQL.">
 
-<body class="page-home">
-    <header class="site-header">
-        <a class="brand" href="./index.html" aria-label="WelWel Cars, página inicial">
-            <img src="./img/logo.webp" alt="WelWel Cars" width="480" height="234">
-        </a>
-        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-            <span></span><span></span><span></span>
-        </button>
-        <nav id="menu" class="menu" aria-label="Menu principal">
-            <ul>
-                <li><a href="./index.html" aria-current="page">Home</a></li>
-                <li><a href="./carros.html">Carros</a></li>
-                <li><a href="./contato.html">Contato</a></li>
-            </ul>
-        </nav>
+    <!-- Aparência do link quando compartilhado no WhatsApp e LinkedIn -->
+    <meta property="og:title" content="Elson Rocha | Desenvolvedor Backend">
+    <meta property="og:description" content="Conheça meus projetos com Java, Spring Boot, Node.js, Python e SQL.">
+    <meta property="og:image" content="img/elson.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%235b3df5'/><text x='50%' y='54%' font-family='Segoe UI,Arial' font-size='34' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'>ER</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="container topo-conteudo">
+            <a href="#inicio" class="logo">Elson<span>.dev</span></a>
+
+            <button class="menu-botao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="menu" class="menu">
+                <a href="#inicio">Home</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="container" aria-roledescription="carrossel" aria-label="Carros em destaque">
-
-            <div class="list">
-            <article class="item active" aria-roledescription="slide" aria-label="1 de 5">
-                <div class="car-img">
-                    <img src="./img/car1.webp" alt="Porsche 911 Turbo S, vista lateral" fetchpriority="high">
+        <section id="inicio" class="principal">
+            <div class="container principal-conteudo">
+                <div>
+                    <p class="saudacao">Olá, eu sou</p>
+                    <h1>Elson Rocha<br><span>Desenvolvedor Backend</span></h1>
+                    <p class="resumo">Transformo regras de negócio em código limpo, eficiente e fácil de manter, com APIs REST, bancos de dados e boas práticas de arquitetura.</p>
+                    <div class="acoes">
+                        <a href="#projetos" class="btn btn-principal">Ver meus projetos</a>
+                        <a href="#contato" class="btn btn-secundario">Fale comigo</a>
+                    </div>
                 </div>
-
-                <div class="content">
-                    <p class="car-information">Único Dono</p>
-                    <h2>Porsche 911 Turbo S <small>Tipo 992</small></h2>
-                    <p class="description">Linhas fluidas da família 911, caixas de roda traseiras alargadas e freios de cerâmica com pinças amarelas.</p>
-                    <ul class="stats">
-                        <li><b>650 cv</b><span>potência</span></li>
-                        <li><b>2,7 s</b><span>0 a 100 km/h</span></li>
-                        <li><b>330 km/h</b><span>velocidade máx.</span></li>
-                    </ul>
-                    <button class="information" type="button" data-ficha="ficha-1">Saiba Mais</button>
-                </div>
-            </article>
-            <article class="item" aria-roledescription="slide" aria-label="2 de 5" aria-hidden="true">
-                <div class="car-img">
-                    <img src="./img/car2.webp" alt="Ferrari California T, vista lateral" loading="lazy">
-                </div>
-
-                <div class="content">
-                    <p class="car-information">Único Dono</p>
-                    <h2>Ferrari California T <small>Grand Tourer conversível</small></h2>
-                    <p class="description">Clássico GT de motor dianteiro-central, conversível 2+2 com pintura Rosso Corsa.</p>
-                    <ul class="stats">
-                        <li><b>560 cv</b><span>potência</span></li>
-                        <li><b>3,6 s</b><span>0 a 100 km/h</span></li>
-                        <li><b>316 km/h</b><span>velocidade máx.</span></li>
-                    </ul>
-                    <button class="information" type="button" data-ficha="ficha-2">Saiba Mais</button>
-                </div>
-            </article>
-            <article class="item" aria-roledescription="slide" aria-label="3 de 5" aria-hidden="true">
-                <div class="car-img">
-                    <img src="./img/car3.webp" alt="Lamborghini Aventador S, vista lateral" loading="lazy">
-                </div>
-
-                <div class="content">
-                    <p class="car-information">Único Dono</p>
-                    <h2>Lamborghini Aventador S <small>LP 740-4</small></h2>
-                    <p class="description">Silhueta em cunha, V12 aspirado e as icônicas portas em tesoura de Sant&#x27;Agata Bolognese.</p>
-                    <ul class="stats">
-                        <li><b>740 cv</b><span>potência</span></li>
-                        <li><b>2,9 s</b><span>0 a 100 km/h</span></li>
-                        <li><b>350 km/h</b><span>velocidade máx.</span></li>
-                    </ul>
-                    <button class="information" type="button" data-ficha="ficha-3">Saiba Mais</button>
-                </div>
-            </article>
-            <article class="item" aria-roledescription="slide" aria-label="4 de 5" aria-hidden="true">
-                <div class="car-img">
-                    <img src="./img/car4.webp" alt="Geely EX2, vista lateral" loading="lazy">
-                </div>
-
-                <div class="content">
-                    <p class="car-information">Único Dono</p>
-                    <h2>Geely EX2 <small>Elétrico compacto</small></h2>
-                    <p class="description">Elétrico de proporções de monovolume, pintura bicolor e design pensado para reduzir o arrasto.</p>
-                    <ul class="stats">
-                        <li><b>116 cv</b><span>potência</span></li>
-                        <li><b>289 km</b><span>autonomia</span></li>
-                        <li><b>21 min</b><span>recarga 30-80%</span></li>
-                    </ul>
-                    <button class="information" type="button" data-ficha="ficha-4">Saiba Mais</button>
-                </div>
-            </article>
-            <article class="item" aria-roledescription="slide" aria-label="5 de 5" aria-hidden="true">
-                <div class="car-img">
-                    <img src="./img/car5.webp" alt="BMW iX3 M Sport, vista lateral" loading="lazy">
-                </div>
-
-                <div class="content">
-                    <p class="car-information">Único Dono</p>
-                    <h2>BMW iX3 M Sport <small>Geração G01 LCI</small></h2>
-                    <p class="description">SUV elétrico que preserva as linhas do X3, com pacote aerodinâmico M Sport.</p>
-                    <ul class="stats">
-                        <li><b>286 cv</b><span>potência</span></li>
-                        <li><b>460 km</b><span>autonomia</span></li>
-                        <li><b>6,8 s</b><span>0 a 100 km/h</span></li>
-                    </ul>
-                    <button class="information" type="button" data-ficha="ficha-5">Saiba Mais</button>
-                </div>
-            </article>
+                <img class="foto" src="img/elson.jpg" alt="Foto de Elson Rocha" width="600" height="800">
             </div>
+        </section>
 
-            <div class="arrows">
-                <button id="prev" type="button" aria-label="Carro anterior"><img src="./img/arrow.svg" alt=""></button>
-                <button id="next" type="button" aria-label="Próximo carro"><img src="./img/arrow.svg" alt=""></button>
+        <section id="projetos" class="secao">
+            <div class="container">
+                <h2 class="titulo-secao">Projetos</h2>
+
+                <div class="grade-projetos">
+                    <article class="card">
+                        <img src="img/projeto-welcar.jpg" alt="Tela inicial do site WelCar" loading="lazy">
+                        <div class="card-info">
+                            <h3>WelCar</h3>
+                            <p>Meu primeiro projeto: site de vitrine de carros com carrossel de destaques, feito em HTML5 e CSS3.</p>
+                            <ul class="tags">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                            </ul>
+                            <div class="card-links">
+                                <a href="https://elsondev-backend.github.io/mycarr/Car/index.html" target="_blank" rel="noopener">Ver site</a>
+                                <a href="https://github.com/elsondev-backend/mycarr" target="_blank" rel="noopener">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="img/projeto-geely-store.jpg" alt="Vitrine da loja Geely Store com acessórios do Geely EX2" loading="lazy">
+                        <div class="card-info">
+                            <h3>Geely Store</h3>
+                            <p>Loja de peças e acessórios da Geely, montadora que vem conquistando o mundo com suas inovações no mercado automotivo.</p>
+                            <ul class="tags">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                            </ul>
+                            <div class="card-links">
+                                <a href="https://elsondev-backend.github.io/DevStore/" target="_blank" rel="noopener">Ver site</a>
+                                <a href="https://github.com/elsondev-backend/DevStore" target="_blank" rel="noopener">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="img/projeto-banco-dados.jpg" alt="Gráfico de faturamento mensal do banco WelCar Locações" loading="lazy">
+                        <div class="card-info">
+                            <h3>WelCar Locações (banco de dados)</h3>
+                            <p>Banco MySQL de uma locadora com 5 filiais: modelagem ER, procedures com transação, triggers de auditoria, perfis de acesso e 17 consultas analíticas com CTE e window functions sobre quase 2 anos de dados simulados.</p>
+                            <ul class="tags">
+                                <li>MySQL</li>
+                                <li>SQL</li>
+                                <li>Python</li>
+                                <li>Docker</li>
+                            </ul>
+                            <div class="card-links">
+                                <a href="https://github.com/elsondev-backend/Portfolio/tree/main/projetos/welcar-locacoes-db#readme" target="_blank" rel="noopener">Ver projeto</a>
+                                <a href="https://github.com/elsondev-backend/Portfolio/tree/main/projetos/welcar-locacoes-db/sql" target="_blank" rel="noopener">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="indicator">
-                <div class="number" aria-live="polite">01</div>
-                <ul>
-                <li><button class="line active" type="button" aria-label="Ir para o carro 1"></button></li>
-                <li><button class="line" type="button" aria-label="Ir para o carro 2"></button></li>
-                <li><button class="line" type="button" aria-label="Ir para o carro 3"></button></li>
-                <li><button class="line" type="button" aria-label="Ir para o carro 4"></button></li>
-                <li><button class="line" type="button" aria-label="Ir para o carro 5"></button></li>
-                </ul>
+        <section id="sobre" class="secao secao-escura">
+            <div class="container sobre">
+                <div>
+                    <h2 class="titulo-secao">Sobre mim</h2>
+                    <p>Eterno aprendiz, motivado por conhecimento. Gosto de transformar lógicas de negócio em código limpo, eficiente e de fácil manutenção.</p>
+                    <p>Trabalho com construção de APIs RESTful, gerenciamento de bancos de dados e integração de microsserviços, sempre buscando as boas práticas do mercado, como Clean Code, testes automatizados e Clean Architecture, para resolver problemas de desempenho e escalabilidade.</p>
+                </div>
+
+                <div>
+                    <h3 class="subtitulo">Tecnologias</h3>
+                    <ul class="habilidades">
+                        <li><img src="img/skills/java.svg" alt="" width="40" height="40">Java</li>
+                        <li><img src="img/skills/spring.svg" alt="" width="40" height="40">Spring Boot</li>
+                        <li><img src="img/skills/nodejs.svg" alt="" width="40" height="40">Node.js</li>
+                        <li><img src="img/skills/python.svg" alt="" width="40" height="40">Python</li>
+                        <li><img src="img/skills/mysql.svg" alt="" width="40" height="40">SQL</li>
+                        <li><img src="img/skills/git.svg" alt="" width="40" height="40">Git</li>
+                        <li><img src="img/skills/html5.svg" alt="" width="40" height="40">HTML5</li>
+                        <li><img src="img/skills/css3.svg" alt="" width="40" height="40">CSS3</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="secao">
+            <div class="container contato">
+                <h2 class="titulo-secao centro">Contato</h2>
+                <p>Está procurando um desenvolvedor backend ou quer conversar sobre um projeto? Me chama!</p>
+
+                <div class="botoes-contato">
+                    <a href="https://wa.me/5571999079849" target="_blank" rel="noopener" class="bt bt-zap">
+                        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:evangelistabackend@gmail.com" class="bt bt-email">
+                        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+                        E-mail
+                    </a>
+                    <a href="https://www.linkedin.com/in/elson-rocha-evangelista-46693858" target="_blank" rel="noopener" class="bt bt-linkedin">
+                        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/elsondev-backend" target="_blank" rel="noopener" class="bt bt-github">
+                        <svg viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
+                        GitHub
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <dialog class="ficha" id="ficha-1" aria-labelledby="ficha-1-titulo">
-        <form method="dialog">
-            <button class="close" aria-label="Fechar">×</button>
-        </form>
-        <p class="car-information">Ficha técnica</p>
-        <h2 id="ficha-1-titulo">Porsche 911 Turbo S <small>Tipo 992</small></h2>
-        <img src="./img/car1.webp" alt="" loading="lazy">
-        <h3>Análise visual</h3>
-        <ul class="highlights">
-            <li><strong>Silhueta de perfil:</strong> Linhas fluidas e aerodinâmicas tradicionais do 911, com as caixas de roda traseiras visivelmente alargadas.</li>
-            <li><strong>Entradas de ar laterais:</strong> Grandes aberturas nos para-lamas traseiros, que alimentam e refrigeram o motor biturbo.</li>
-            <li><strong>Rodas e freios:</strong> Rodas com cubo rápido (central lock) e pinças amarelas do sistema de freios de cerâmica PCCB.</li>
-            <li><strong>Defletor traseiro:</strong> Aerofólio integrado para controle adaptativo da força descendente (downforce).</li>
-        </ul>
-        <h3>Especificações</h3>
-        <dl class="specs">
-            <div><dt>Motor</dt><dd>3.8 litros, 6 cilindros opostos (Boxer), biturbo</dd></div>
-            <div><dt>Combustível</dt><dd>Gasolina</dd></div>
-            <div><dt>Potência máxima</dt><dd>650 cv a 6.750 rpm</dd></div>
-            <div><dt>Torque máximo</dt><dd>81,6 kgfm a 2.500 rpm</dd></div>
-            <div><dt>Transmissão</dt><dd>Automática de dupla embreagem (PDK), 8 marchas</dd></div>
-            <div><dt>Tração</dt><dd>Integral sob demanda (AWD)</dd></div>
-            <div><dt>0 a 100 km/h</dt><dd>2,7 segundos</dd></div>
-            <div><dt>Velocidade máxima</dt><dd>330 km/h</dd></div>
-            <div><dt>Peso em ordem de marcha</dt><dd>1.640 kg</dd></div>
-            <div><dt>Freios</dt><dd>Discos de cerâmica ventilados e perfurados (PCCB)</dd></div>
-            <div><dt>Pneus dianteiros</dt><dd>255/35 R20</dd></div>
-            <div><dt>Pneus traseiros</dt><dd>315/30 R21</dd></div>
-        </dl>
-    </dialog>
-    <dialog class="ficha" id="ficha-2" aria-labelledby="ficha-2-titulo">
-        <form method="dialog">
-            <button class="close" aria-label="Fechar">×</button>
-        </form>
-        <p class="car-information">Ficha técnica</p>
-        <h2 id="ficha-2-titulo">Ferrari California T <small>Grand Tourer conversível</small></h2>
-        <img src="./img/car2.webp" alt="" loading="lazy">
-        <h3>Análise visual</h3>
-        <ul class="highlights">
-            <li><strong>Design de perfil:</strong> Silhueta clássica de Grand Tourer, motor dianteiro-central e tração traseira, com o escudo da escuderia nos para-lamas dianteiros.</li>
-            <li><strong>Configuração conversível:</strong> Capota aberta, revelando o interior no formato de assentos 2+2.</li>
-            <li><strong>Flanco esculpido:</strong> Um vinco fluido que começa atrás da roda dianteira e segue até a maçaneta da porta.</li>
-            <li><strong>Rodas e freios:</strong> Rodas de liga leve de cinco raios em estrela, com pinças vermelhas que combinam com a pintura Rosso Corsa.</li>
-        </ul>
-        <h3>Especificações</h3>
-        <dl class="specs">
-            <div><dt>Motor</dt><dd>3.9 litros (3.855 cm³), V8 a 90°, biturbo</dd></div>
-            <div><dt>Combustível</dt><dd>Gasolina</dd></div>
-            <div><dt>Potência máxima</dt><dd>560 cv a 7.500 rpm</dd></div>
-            <div><dt>Torque máximo</dt><dd>77 kgfm a 4.750 rpm</dd></div>
-            <div><dt>Transmissão</dt><dd>Automatizada de dupla embreagem (F1-DCT), 7 marchas</dd></div>
-            <div><dt>Tração</dt><dd>Traseira (RWD)</dd></div>
-            <div><dt>0 a 100 km/h</dt><dd>3,6 segundos</dd></div>
-            <div><dt>Velocidade máxima</dt><dd>316 km/h</dd></div>
-            <div><dt>Peso seco</dt><dd>1.625 kg</dd></div>
-            <div><dt>Freios</dt><dd>Discos de carbono-cerâmica ventilados</dd></div>
-            <div><dt>Porta-malas</dt><dd>340 litros (240 litros com a capota recolhida)</dd></div>
-        </dl>
-    </dialog>
-    <dialog class="ficha" id="ficha-3" aria-labelledby="ficha-3-titulo">
-        <form method="dialog">
-            <button class="close" aria-label="Fechar">×</button>
-        </form>
-        <p class="car-information">Ficha técnica</p>
-        <h2 id="ficha-3-titulo">Lamborghini Aventador S <small>LP 740-4</small></h2>
-        <img src="./img/car3.webp" alt="" loading="lazy">
-        <h3>Análise visual</h3>
-        <ul class="highlights">
-            <li><strong>Silhueta em cunha:</strong> Linhas angulares e geométricas, clássicas e futuristas, do DNA de design da Lamborghini.</li>
-            <li><strong>Entradas de ar laterais:</strong> Enormes aberturas nas portas e para-lamas traseiros, que levam ar ao motor V12 e aos freios.</li>
-            <li><strong>Rodas e freios:</strong> Rodas raiadas com acabamento diamantado e pinças de freio amarelas em contraste com a carroceria.</li>
-            <li><strong>Portas em tesoura:</strong> O vinco superior marca o contorno das portas de abertura vertical de Sant&#x27;Agata Bolognese.</li>
-        </ul>
-        <h3>Especificações</h3>
-        <dl class="specs">
-            <div><dt>Motor</dt><dd>6.5 litros, V12 a 60°, aspirado</dd></div>
-            <div><dt>Combustível</dt><dd>Gasolina</dd></div>
-            <div><dt>Potência máxima</dt><dd>740 cv a 8.400 rpm</dd></div>
-            <div><dt>Torque máximo</dt><dd>70,4 kgfm (690 Nm) a 5.500 rpm</dd></div>
-            <div><dt>Transmissão</dt><dd>Automatizada ISR (Independent Shifting Rods), 7 marchas</dd></div>
-            <div><dt>Tração</dt><dd>Integral permanente (AWD)</dd></div>
-            <div><dt>0 a 100 km/h</dt><dd>2,9 segundos</dd></div>
-            <div><dt>Velocidade máxima</dt><dd>350 km/h</dd></div>
-            <div><dt>Peso seco</dt><dd>1.575 kg</dd></div>
-            <div><dt>Chassi</dt><dd>Suspensão ativa magnetorreológica e esterçamento nas 4 rodas</dd></div>
-        </dl>
-    </dialog>
-    <dialog class="ficha" id="ficha-4" aria-labelledby="ficha-4-titulo">
-        <form method="dialog">
-            <button class="close" aria-label="Fechar">×</button>
-        </form>
-        <p class="car-information">Ficha técnica</p>
-        <h2 id="ficha-4-titulo">Geely EX2 <small>Elétrico compacto</small></h2>
-        <img src="./img/car4.webp" alt="" loading="lazy">
-        <h3>Análise visual</h3>
-        <ul class="highlights">
-            <li><strong>Proporções de monovolume:</strong> Teto alto, balanços curtos e frente inclinada, priorizando o espaço interno e a modularidade da cabine.</li>
-            <li><strong>Pintura bicolor:</strong> Carroceria em tom suave, com colunas e teto em preto brilhante.</li>
-            <li><strong>Design aerodinâmico:</strong> Rodas aro 16 de desenho fechado e maçanetas embutidas para reduzir o arrasto.</li>
-            <li><strong>Linha de cintura fluida:</strong> Vincos sutis e transições arredondadas, numa estética limpa e futurista.</li>
-        </ul>
-        <h3>Especificações</h3>
-        <dl class="specs">
-            <div><dt>Motor</dt><dd>Elétrico, síncrono de ímãs permanentes</dd></div>
-            <div><dt>Potência máxima</dt><dd>116 cv (85 kW)</dd></div>
-            <div><dt>Torque máximo</dt><dd>15,3 kgfm (150 Nm)</dd></div>
-            <div><dt>Tração</dt><dd>Traseira (RWD)</dd></div>
-            <div><dt>Bateria</dt><dd>Lítio-ferro-fosfato (LFP)</dd></div>
-            <div><dt>Autonomia (Inmetro)</dt><dd>289 km</dd></div>
-            <div><dt>Tempo de recarga</dt><dd>30% a 80% em 21 minutos (DC rápida)</dd></div>
-            <div><dt>Comprimento / entre-eixos</dt><dd>4,13 m / 2,65 m</dd></div>
-            <div><dt>Porta-malas traseiro</dt><dd>375 litros</dd></div>
-            <div><dt>Porta-malas dianteiro (frunk)</dt><dd>70 litros</dd></div>
-        </dl>
-    </dialog>
-    <dialog class="ficha" id="ficha-5" aria-labelledby="ficha-5-titulo">
-        <form method="dialog">
-            <button class="close" aria-label="Fechar">×</button>
-        </form>
-        <p class="car-information">Ficha técnica</p>
-        <h2 id="ficha-5-titulo">BMW iX3 M Sport <small>Geração G01 LCI</small></h2>
-        <img src="./img/car5.webp" alt="" loading="lazy">
-        <h3>Análise visual</h3>
-        <ul class="highlights">
-            <li><strong>Proporções de SUV:</strong> Silhueta bem definida no estilo SAV, com balanço traseiro que amplia o espaço de carga.</li>
-            <li><strong>Pacote M Sport:</strong> Para-choques esportivos, soleiras laterais musculosas e acabamento Shadow Line nas molduras das janelas.</li>
-            <li><strong>Identidade sutil:</strong> Preserva as linhas do X3, com discretos apliques pretos nas saídas de ar dos para-lamas dianteiros.</li>
-            <li><strong>Rodas exclusivas:</strong> Liga leve aerodinâmica de desenho fechado e acabamento bicolor, para reduzir o arrasto.</li>
-        </ul>
-        <h3>Especificações</h3>
-        <dl class="specs">
-            <div><dt>Motorização</dt><dd>1 motor elétrico traseiro (BMW eDrive de 5ª geração)</dd></div>
-            <div><dt>Potência máxima</dt><dd>286 cv (210 kW)</dd></div>
-            <div><dt>Torque máximo</dt><dd>40,8 kgfm (400 Nm)</dd></div>
-            <div><dt>Transmissão</dt><dd>Automática de 1 marcha</dd></div>
-            <div><dt>Tração</dt><dd>Traseira (RWD)</dd></div>
-            <div><dt>0 a 100 km/h</dt><dd>6,8 segundos</dd></div>
-            <div><dt>Velocidade máxima</dt><dd>180 km/h (limitada eletronicamente)</dd></div>
-            <div><dt>Bateria</dt><dd>80 kWh brutos (74 kWh úteis)</dd></div>
-            <div><dt>Autonomia média</dt><dd>Até 460 km (ciclo WLTP)</dd></div>
-            <div><dt>Recarga rápida</dt><dd>10% a 80% em cerca de 32 minutos (DC de 150 kW)</dd></div>
-            <div><dt>Porta-malas</dt><dd>510 litros</dd></div>
-        </dl>
-    </dialog>
+    <footer class="rodape">
+        <p>© <span id="ano">2026</span> Elson Rocha. Todos os direitos reservados.</p>
+    </footer>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

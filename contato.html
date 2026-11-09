@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | WelWel Cars</title>
+    <meta name="description" content="Fale com a WelWel Cars e agende uma visita ou test drive.">
+    <meta name="theme-color" content="#6d00d9">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./estyle.css">
+</head>
+
+<body class="page-contato">
+    <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="WelWel Cars, página inicial">
+            <img src="./img/logo.webp" alt="WelWel Cars" width="480" height="234">
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="menu" class="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./carros.html">Carros</a></li>
+                <li><a href="./contato.html" aria-current="page">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="page-intro">
+            <p class="car-information">Fale com a gente</p>
+            <h1>Contato</h1>
+            <p>Gostou de algum carro? Mande uma mensagem para agendar uma visita ou um test drive.</p>
+        </section>
+
+        <section class="contact">
+            <form class="contact-form" id="contact-form">
+                <label>Nome
+                    <input type="text" name="nome" autocomplete="name" required>
+                </label>
+                <label>E-mail
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>Telefone
+                    <input type="tel" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000">
+                </label>
+                <label>Carro de interesse
+                    <select name="carro">
+                        <option value="">Nenhum em especial</option>
+                        <option>Porsche 911 Turbo S</option>
+                        <option>Ferrari California T</option>
+                        <option>Lamborghini Aventador S</option>
+                        <option>Geely EX2</option>
+                        <option>BMW iX3 M Sport</option>
+                    </select>
+                </label>
+                <label class="full">Mensagem
+                    <textarea name="mensagem" rows="5" required></textarea>
+                </label>
+                <button class="information" type="submit">Enviar</button>
+                <p class="form-status" role="status" hidden>Obrigado! Esta é uma página de demonstração, então a mensagem não foi enviada de verdade.</p>
+            </form>
+
+            <aside class="contact-info">
+                <h2>Visite a loja</h2>
+                <ul>
+                    <li><strong>Horário:</strong> segunda a sábado, das 9h às 18h</li>
+                    <li><strong>Test drive:</strong> com hora marcada</li>
+                    <li><strong>Atendimento:</strong> pelo formulário desta página</li>
+                </ul>
+                <a class="information" href="./carros.html">Ver os carros</a>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 WelWel Cars · Projeto de estudo de front-end (HTML5, CSS3 e JavaScript).</p>
+        <p><a href="https://github.com/elsondev-backend/WelCar" target="_blank" rel="noopener">Ver o código no GitHub</a></p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

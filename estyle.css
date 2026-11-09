@@ -1,0 +1,745 @@
+/* ============ Base ============ */
+:root {
+    --roxo-claro: #7f3d9e;
+    --roxo: #6d00d9;
+    --roxo-escuro: #1a0033;
+    --verde: #beff1b;
+    --texto: #fff;
+    --texto-suave: #d9d9d9;
+    --borda: rgba(255, 255, 255, 0.14);
+    --gutter: max(16px, 5vw);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--texto);
+    background: var(--roxo-escuro);
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+}
+
+.car-information {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--verde);
+}
+
+/* Botão verde "Saiba Mais" (também usado em links) */
+.information {
+    display: inline-block;
+    border-radius: 30px;
+    padding: 0.35em 1.6em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    border: 2px solid #791fd3;
+    background-color: var(--verde);
+    color: #000;
+    cursor: pointer;
+    font-family: "League Gothic", sans-serif;
+    font-size: 1.3rem;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        background-color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* ============ Cabeçalho ============ */
+.site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px var(--gutter);
+    background: rgba(26, 0, 51, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--borda);
+
+    & .brand img {
+        height: 60px;
+        width: auto;
+        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+    }
+
+    & .menu ul {
+        display: flex;
+        gap: clamp(20px, 4vw, 56px);
+    }
+
+    & .menu a {
+        font-family: "League Gothic", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 4px 0;
+        border-bottom: 3px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+
+        &:hover,
+        &[aria-current="page"] {
+            color: var(--verde);
+            border-color: var(--verde);
+        }
+    }
+}
+
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    & span {
+        width: 22px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    &[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    &[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    &[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* ============ Carrossel (Home) ============ */
+.page-home {
+    overflow: hidden;
+}
+
+section.container {
+    --calculation: 1;
+    background-image: radial-gradient(var(--roxo-claro), var(--roxo));
+    height: 100vh;
+    height: 100svh;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+
+    & .list {
+        width: min(1200px, 90vw);
+        margin: auto;
+        height: 100%;
+        position: relative;
+        display: grid;
+
+        /* Linha branca onde o carro "apoia" */
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 48%;
+            top: 60%;
+            border-top: 2px solid rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    & .item {
+        grid-area: 1 / 1;
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        align-items: center;
+        gap: 40px;
+        transform: translateX(calc(100vw * var(--calculation)));
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
+
+        & .car-img img {
+            width: 100%;
+            max-height: 50vh;
+            object-fit: contain;
+            transform: rotate(0);
+            transition: transform 0.5s 0.3s;
+            filter: drop-shadow(0 30px 25px rgba(0, 0, 0, 0.45));
+        }
+
+        & .content {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            text-align: right;
+            gap: 18px;
+
+            & > * {
+                transform: translateX(calc(200px * var(--calculation)));
+                opacity: 0;
+                transition: transform 0.7s 0.3s, opacity 0.7s 0.3s;
+            }
+
+            & h2 { transition-delay: 0.45s; }
+            & .description { transition-delay: 0.6s; }
+            & .stats { transition-delay: 0.75s; }
+            & .information { transition-delay: 0.9s; }
+        }
+
+        &.active {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+
+            & .car-img img { transform: rotate(-20deg); }
+
+            & .content > * {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    }
+
+    & .arrows {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        width: 95vw;
+        pointer-events: none;
+        z-index: 3;
+
+        & button {
+            pointer-events: auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: #fff;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+
+            & img { width: 28px; }
+
+            &:hover { background-color: var(--verde); }
+        }
+
+        & #prev { transform: scale(-1); }
+    }
+
+    & .indicator {
+        position: absolute;
+        left: var(--gutter);
+        bottom: 6vh;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 3;
+
+        & .number {
+            font-size: 5em;
+            line-height: 1;
+            font-family: "League Gothic", sans-serif;
+        }
+
+        & ul {
+            display: flex;
+            gap: 10px;
+        }
+
+        & .line {
+            display: block;
+            width: 50px;
+            height: 5px;
+            padding: 0;
+            border: none;
+            background-color: var(--verde);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, width 0.5s;
+
+            &.active {
+                background-color: #fff;
+                width: 70px;
+            }
+        }
+    }
+}
+
+/* Textos do carro (carrossel, página Carros e ficha) */
+h2 small {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+}
+
+.item h2,
+.car-card h2,
+.ficha h2 {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+.item h2 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+}
+
+.description {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    max-width: 420px;
+}
+
+.stats {
+    display: flex;
+    gap: 24px;
+
+    & li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & b {
+        font-family: "League Gothic", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    & span {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--texto-suave);
+    }
+}
+
+/* ============ Ficha técnica (janela) ============ */
+.ficha {
+    margin: auto;
+    width: min(760px, calc(100% - 32px));
+    max-height: 90vh;
+    overflow: auto;
+    padding: 32px;
+    color: var(--texto);
+    background: linear-gradient(160deg, #2c0057, #14002a);
+    border: 1px solid rgba(190, 255, 27, 0.4);
+    border-radius: 20px;
+
+    &::backdrop {
+        background: rgba(10, 0, 20, 0.7);
+        backdrop-filter: blur(4px);
+    }
+
+    & h2 {
+        font-size: clamp(2.4rem, 7vw, 3.6rem);
+        margin: 4px 0 12px;
+    }
+
+    & > img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        margin: 8px 0 16px;
+    }
+
+    & h3 {
+        font-family: "League Gothic", sans-serif;
+        font-weight: 400;
+        font-size: 1.6rem;
+        letter-spacing: 0.04em;
+        margin: 20px 0 10px;
+    }
+
+    & .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background: var(--verde);
+        color: #000;
+        font-size: 1.6rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+}
+
+.highlights {
+    display: grid;
+    gap: 8px;
+    font-size: 0.92rem;
+    color: var(--texto-suave);
+
+    & strong { color: var(--verde); }
+}
+
+.specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 8px;
+
+    & div {
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 10px;
+    }
+
+    & dt {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--verde);
+    }
+
+    & dd {
+        font-weight: 600;
+        font-size: 0.92rem;
+    }
+}
+
+/* ============ Páginas internas (Carros e Contato) ============ */
+.page-carros,
+.page-contato {
+    background:
+        radial-gradient(ellipse at top, var(--roxo-claro), var(--roxo) 35%, var(--roxo-escuro) 75%) no-repeat,
+        var(--roxo-escuro);
+    background-size: 100% 900px;
+}
+
+.page {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 130px 0 60px;
+}
+
+.page-intro {
+    margin-bottom: 40px;
+    max-width: 640px;
+
+    & h1 {
+        font-family: "League Gothic", sans-serif;
+        font-weight: 400;
+        font-size: clamp(3.2rem, 9vw, 6rem);
+        line-height: 1;
+        margin: 6px 0 12px;
+    }
+
+    & p:last-child { color: var(--texto-suave); }
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    align-items: start;
+    gap: 24px;
+}
+
+.car-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: var(--verde);
+    }
+
+    & h2 { font-size: 2.6rem; }
+
+    & .stats b { font-size: 1.6rem; }
+}
+
+.car-card-img {
+    aspect-ratio: 16 / 8;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    border-radius: 14px;
+    background: radial-gradient(var(--roxo-claro), var(--roxo));
+    overflow: hidden;
+
+    & img {
+        max-height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 16px 12px rgba(0, 0, 0, 0.4));
+        transition: transform 0.5s;
+    }
+}
+
+.car-card:hover .car-card-img img {
+    transform: rotate(-8deg) scale(1.03);
+}
+
+details {
+    margin-top: auto;
+    border-top: 1px solid var(--borda);
+    padding-top: 12px;
+
+    & summary {
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--verde);
+    }
+
+    &[open] summary { margin-bottom: 12px; }
+
+    & .specs { margin-top: 12px; }
+}
+
+/* Contato */
+.contact {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.contact-form,
+.contact-info {
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    & label {
+        display: grid;
+        gap: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    & .full,
+    & .form-status { grid-column: 1 / -1; }
+
+    & input,
+    & select,
+    & textarea {
+        width: 100%;
+        padding: 12px 14px;
+        font: inherit;
+        font-weight: 400;
+        color: var(--texto);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 12px;
+        resize: vertical;
+
+        &:focus {
+            outline: none;
+            border-color: var(--verde);
+        }
+    }
+
+    & option { color: #000; }
+
+    & button { justify-self: start; }
+
+    & .form-status {
+        color: var(--verde);
+        font-weight: 600;
+    }
+}
+
+.contact-info {
+    display: grid;
+    gap: 16px;
+
+    & h2 {
+        font-family: "League Gothic", sans-serif;
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 1;
+    }
+
+    & ul {
+        display: grid;
+        gap: 8px;
+        color: var(--texto-suave);
+    }
+
+    & strong { color: var(--texto); }
+
+    & .information { justify-self: start; }
+}
+
+.site-footer {
+    text-align: center;
+    padding: 32px 16px;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    border-top: 1px solid var(--borda);
+
+    & a { color: var(--verde); }
+}
+
+/* ============ Celular e tablet ============ */
+@media (max-width: 860px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .site-header {
+        & .brand img { height: 48px; }
+
+        & .menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(26, 0, 51, 0.97);
+            border-bottom: 1px solid var(--borda);
+            padding: 8px var(--gutter) 16px;
+            display: none;
+
+            &.open { display: block; }
+
+            & ul {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            & a {
+                display: block;
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .page-home {
+        overflow: auto;
+    }
+
+    section.container {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 104px 0 150px;
+
+        & .list::before { display: none; }
+
+        & .item {
+            grid-template-columns: 1fr;
+            align-content: start;
+            gap: 24px;
+
+            & .car-img { padding: 8px 16px 0; }
+
+            & .car-img img { max-height: 30vh; }
+
+            &.active .car-img img { transform: rotate(-8deg); }
+
+            & .content {
+                align-items: start;
+                text-align: left;
+                gap: 14px;
+            }
+        }
+
+        & .arrows {
+            top: auto;
+            left: auto;
+            right: var(--gutter);
+            bottom: 28px;
+            transform: none;
+            width: auto;
+            gap: 12px;
+        }
+
+        & .indicator {
+            bottom: 28px;
+
+            & .number { font-size: 3em; }
+
+            & .line { width: 28px; }
+
+            & .line.active { width: 44px; }
+        }
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .stats {
+        gap: 18px;
+    }
+
+    .ficha {
+        padding: 24px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        scroll-behavior: auto !important;
+    }
+}
